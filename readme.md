@@ -9,6 +9,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 1. [Cadastro](./requirements/signup.md)
 1. [Login](./requirements/login.md)
 1. [Criar enquete](./requirements/add-survey.md)
+1. [Listar enquetes](./requirements/surveys.md)
 1. [Responder enquete](./requirements/answer-survey.md)
 1. [Resultado da enquete](./requirements/survey-result.md)
 
@@ -20,7 +21,8 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Dependency Inversion Principle (DIP)
 * Don't Repeat Yourself (DRY)
 * Composition Over Inheritance
-* Small commits
+* Small Commits
+
 > ## Design Patterns aplicados:
 * Factory
 * Adapter
@@ -29,13 +31,19 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Dependency Injection
 * Abstract Server
 * Composition Root
+
 > ## Metodologias/designs utilizados:
 * TDD
 * Clean Architecture
 * DDD
 * Conventional Commits
 * GitFlow
+* Modular Design
+* Dependency Diagrams
+* Use Cases
+
 > ## Bibliotecas e ferramentas utilizadas:
+* NPM
 * Typescript
 * Git
 * Docker
@@ -51,6 +59,10 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Eslint
 * Standard Javascript Style
 * Sucrase
+* Nodemon
+* Rimraf
+* In-Memory MongoDb Server
+
 > ## Features abordadas:
 * Atalhos no Git
 * Log de Erro
