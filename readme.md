@@ -1,3 +1,6 @@
+[![Build Status](https://app.travis-ci.com/alexandrevoliveira/clean-node-api.svg?branch=main)](https://app.travis-ci.com/alexandrevoliveira/clean-node-api)
+[![Coverage Status](https://coveralls.io/repos/github/alexandrevoliveira/clean-node-api/badge.svg)](https://coveralls.io/github/alexandrevoliveira/clean-node-api)
+
 # **Clean Node API**
 
 Essa API faz parte do treinamento do professor Rodrigo Manguinho (Mango) na Udemy.
