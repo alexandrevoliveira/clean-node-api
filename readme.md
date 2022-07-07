@@ -12,13 +12,14 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 > ## APIs previstas para esse treinamento:
 
 1. [Cadastro](./requirements/signup.md)
-1. [Login](./requirements/login.md)
-1. [Criar enquete](./requirements/add-survey.md)
-1. [Listar enquetes](./requirements/surveys.md)
-1. [Responder enquete](./requirements/answer-survey.md)
-1. [Resultado da enquete](./requirements/survey-result.md)
+2. [Login](./requirements/login.md)
+3. [Criar enquete](./requirements/add-survey.md)
+4. [Listar enquetes](./requirements/surveys.md)
+5. [Responder enquete](./requirements/answer-survey.md)
+6. [Resultado da enquete](./requirements/survey-result.md)
 
 > ## Princípios aplicados:
+
 * Single Responsibility Principle (SRP)
 * Open Closed Principle (OCP)
 * Liskov Substitution Principle (LSP)
@@ -29,6 +30,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Small Commits
 
 > ## Design Patterns aplicados:
+
 * Factory
 * Adapter
 * Composite
@@ -39,6 +41,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Composition Root
 
 > ## Metodologias/designs utilizados:
+
 * TDD
 * Clean Architecture
 * DDD
@@ -52,6 +55,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Continuous Deployment
 
 > ## Bibliotecas e ferramentas utilizadas:
+
 * NPM
 * Typescript
 * Git
@@ -75,6 +79,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * In-Memory MongoDb Server
 
 > ## Features abordadas:
+
 * Atalhos no Git
 * Log de Erro
 * Segurança (Hashing, Encryption e Encoding)
