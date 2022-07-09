@@ -7,6 +7,7 @@
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/return-await": "off",
-    "node/no-path-concat": "off"
+    "node/no-path-concat": "off",
+    "@typescript-eslint/consistent-type-definitions": "off"
   }
 }
