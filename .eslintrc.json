@@ -8,6 +8,7 @@
     "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/return-await": "off",
     "node/no-path-concat": "off",
-    "@typescript-eslint/consistent-type-definitions": "off"
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/restrict-template-expressions": "off"
   }
 }
