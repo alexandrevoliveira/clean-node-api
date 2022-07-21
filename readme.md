@@ -69,6 +69,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Jest
 * MongoDb
 * Travis CI
+* Swagger
 * Coveralls
 * Bcrypt
 * JsonWebToken
@@ -88,6 +89,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 
 > ## Features do Node
 
+* Documentação de API com Swagger
 * Log de Erro
 * Segurança (Hashing, Encryption e Encoding)
 * CORS
