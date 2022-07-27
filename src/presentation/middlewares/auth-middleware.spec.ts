@@ -1,9 +1,9 @@
 import { throwError } from '@/domain/test'
 import { AccessDeniedError } from '@/presentation/errors'
 import { forbidden, ok, serverError } from '@/presentation/helpers/http/http-helper'
+import { HttpRequest } from '@/presentation/protocols'
 import { LoadAccountByTokenSpy } from '@/presentation/test'
 import { AuthMiddleware } from './auth-middleware'
-import { HttpRequest } from './auth-middleware-protocols'
 
 const mockRequest = (): HttpRequest => ({
   headers: {
