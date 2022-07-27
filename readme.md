@@ -93,6 +93,8 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * In-Memory MongoDb Server
 * MockDate
 * Module-Alias
+* Copyfiles
+* Npm Check
 
 > ## Features do Node
 
@@ -103,6 +105,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Middlewares
 * Nível de Acesso nas Rotas (Admin, User e Anônimo)
 * Deploy no Heroku
+* Servir Arquivos Estáticos
 
 > ## Features do Git
 
