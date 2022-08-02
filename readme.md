@@ -52,6 +52,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Abstract Server
 * Composition Root
 * Builder
+* Singleton
 
 > ## Metodologias/designs
 
@@ -83,6 +84,8 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Coveralls
 * Validator
 * Express
+* Apollo Server Express
+* Graphql
 * Supertest
 * Husky
 * Lint Staged
@@ -100,6 +103,8 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 > ## Features do Node
 
 * Documentação de API com Swagger
+* API Rest com Express
+* GraphQL com Apollo Server
 * Log de Erro
 * Segurança (Hashing, Encryption e Encoding)
 * CORS
@@ -125,8 +130,10 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * POO Avançado
 * Interface
 * TypeAlias
+* Namespace
 * Utility Types
 * Modularização de Paths
+* Configurações
 * Build
 * Deploy
 * Uso de Breakpoints
