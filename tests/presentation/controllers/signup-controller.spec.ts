@@ -1,8 +1,8 @@
 import { SignUpController } from '@/presentation/controllers'
 import { MissingParamError, ServerError, EmailInUseError } from '@/presentation/errors'
 import { badRequest, forbidden, ok, serverError } from '@/presentation/helpers'
-import { throwError } from '@/../tests/domain/mocks'
-import { AuthenticationSpy, ValidationSpy, AddAccountSpy } from '@/../tests/presentation/mocks'
+import { throwError } from '@/tests/domain/mocks'
+import { AuthenticationSpy, ValidationSpy, AddAccountSpy } from '@/tests/presentation/mocks'
 
 import faker from 'faker'
 

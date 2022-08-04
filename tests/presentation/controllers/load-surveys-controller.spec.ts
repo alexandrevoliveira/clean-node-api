@@ -1,7 +1,7 @@
 import { LoadSurveysController } from '@/presentation/controllers'
 import { noContent, ok, serverError } from '@/presentation/helpers'
-import { throwError } from '@/../tests/domain/mocks'
-import { LoadSurveysSpy } from '@/../tests/presentation/mocks'
+import { throwError } from '@/tests/domain/mocks'
+import { LoadSurveysSpy } from '@/tests/presentation/mocks'
 
 import MockDate from 'mockdate'
 import faker from 'faker'

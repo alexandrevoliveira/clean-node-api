@@ -1,7 +1,7 @@
 import { InvalidParamError } from '@/presentation/errors'
 import { EmailValidation } from '@/validation/validators'
-import { throwError } from '@/../tests/domain/mocks'
-import { EmailValidatorSpy } from '@/../tests/validation/mocks'
+import { throwError } from '@/tests/domain/mocks'
+import { EmailValidatorSpy } from '@/tests/validation/mocks'
 
 import faker from 'faker'
 

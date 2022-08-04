@@ -1,6 +1,6 @@
 import { MissingParamError } from '@/presentation/errors'
 import { ValidationComposite } from '@/validation/validators'
-import { ValidationSpy } from '@/../tests/presentation/mocks'
+import { ValidationSpy } from '@/tests/presentation/mocks'
 
 import faker from 'faker'
 
