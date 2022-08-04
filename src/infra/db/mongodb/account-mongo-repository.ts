@@ -1,10 +1,9 @@
 import { AddAccountRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository, LoadAccountByTokenRepository } from '@/data/protocols'
 import { AccountModel } from '@/domain/models'
-import { AddAccountParams } from '@/domain/usecases'
 import { MongoHelper } from '@/infra/db'
 
 export class AccountMongoRepository implements AddAccountRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository, LoadAccountByTokenRepository {
-  async add (data: AddAccountParams): Promise<AccountModel> {
+  async add (data: AddAccountRepository.Params): Promise<AddAccountRepository.Result> {
     const accountCollection = await MongoHelper.getCollection('accounts')
     const result = await accountCollection.insertOne(data)
     return MongoHelper.map(result.ops[0])
