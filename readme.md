@@ -101,6 +101,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Copyfiles
 * Npm Check
 * Bson ObjectId
+* Apollo Server Integration Testing
 
 > ## Features do Node
 
@@ -153,7 +154,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 > ## Features de Testes
 
 * Testes Unitários
-* Testes de Integração
+* Testes de Integração (API Rest & GraphQL)
 * Cobertura de Testes
 * Test Doubles
 * Mocks
