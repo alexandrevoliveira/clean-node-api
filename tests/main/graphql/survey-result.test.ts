@@ -1,6 +1,6 @@
 import { MongoHelper } from '@/infra/db'
 import env from '@/main/config/env'
-import { makeApolloServer } from './helpers'
+import { makeApolloServer } from '@/tests/main/graphql/helpers'
 
 import { ApolloServer, gql } from 'apollo-server-express'
 import { createTestClient } from 'apollo-server-integration-testing'
