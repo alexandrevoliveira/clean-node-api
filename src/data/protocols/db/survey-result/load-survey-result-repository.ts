@@ -5,5 +5,6 @@ export interface LoadSurveyResultRepository {
 }
 
 export namespace LoadSurveyResultRepository {
-  export type Result = SurveyResultModel
+  export type Result = SurveyResultModel | null
+  export type SurveyResult = SurveyResultModel
 }

@@ -1,8 +1,9 @@
-node_modules
-dist
-coverage
-data
-!src/data
-!tests/data
+.env
 .vscode
 globalConfig.json
+coverage
+data
+dist
+node_modules
+!src/data
+!tests/data

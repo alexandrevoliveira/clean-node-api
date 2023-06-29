@@ -14,7 +14,7 @@ export class AddAccountRepositorySpy implements AddAccountRepository {
 
 export class LoadAccountByEmailRepositorySpy implements LoadAccountByEmailRepository {
   email: string
-  result = {
+  result: LoadAccountByEmailRepository.Result = {
     id: faker.datatype.uuid(),
     name: faker.name.findName(),
     password: faker.internet.password()
@@ -37,9 +37,9 @@ export class CheckAccountByEmailRepositorySpy implements CheckAccountByEmailRepo
 }
 
 export class LoadAccountByTokenRepositorySpy implements LoadAccountByTokenRepository {
-  result = { id: faker.datatype.uuid() }
+  result: LoadAccountByTokenRepository.Result = { id: faker.datatype.uuid() }
   token: string
-  role: string
+  role: string | undefined
 
   async loadByToken (token: string, role?: string): Promise<LoadAccountByTokenRepository.Result> {
     this.token = token

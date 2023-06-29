@@ -1,4 +1,5 @@
 import { LogMongoRepository, MongoHelper } from '@/infra/db'
+import env from '@/main/config/env'
 
 import { Collection } from 'mongodb'
 import faker from 'faker'
@@ -11,7 +12,7 @@ let errorCollection: Collection
 
 describe('LogMongoRepository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {

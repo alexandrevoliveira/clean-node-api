@@ -12,5 +12,5 @@ export namespace SaveSurveyResult {
     date: Date
   }
 
-  export type Result = SurveyResultModel
+  export type Result = SurveyResultModel | null
 }

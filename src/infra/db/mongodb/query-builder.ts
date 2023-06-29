@@ -1,5 +1,5 @@
 export class QueryBuilder {
-  private readonly query = []
+  private readonly query: object[] = []
 
   private addStep (step: string, data: object): QueryBuilder {
     this.query.push({

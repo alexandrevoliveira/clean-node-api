@@ -41,7 +41,7 @@ describe('SignUp Controller', () => {
     const { sut, addAccountSpy } = makeSut()
     jest.spyOn(addAccountSpy, 'add').mockImplementationOnce(throwError)
     const httpResponse = await sut.handle(mockRequest())
-    expect(httpResponse).toEqual(serverError(new ServerError(null)))
+    expect(httpResponse).toEqual(serverError(new ServerError()))
   })
 
   test('Should call AddAccount with correct values', async () => {

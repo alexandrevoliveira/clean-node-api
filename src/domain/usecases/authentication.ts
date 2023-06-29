@@ -11,5 +11,5 @@ export namespace Authentication {
   export type Result = {
     accessToken: string
     name: string
-  }
+  } | null
 }

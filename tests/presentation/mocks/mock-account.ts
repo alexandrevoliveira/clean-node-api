@@ -14,7 +14,7 @@ export class AddAccountSpy implements AddAccount {
 
 export class AuthenticationSpy implements Authentication {
   params: Authentication.Params
-  result = {
+  result: Authentication.Result = {
     accessToken: faker.datatype.uuid(),
     name: faker.name.findName()
   }
@@ -27,8 +27,8 @@ export class AuthenticationSpy implements Authentication {
 
 export class LoadAccountByTokenSpy implements LoadAccountByToken {
   accessToken: string
-  role: string
-  result = {
+  role: string | undefined
+  result: LoadAccountByToken.Result = {
     id: faker.datatype.uuid()
   }
 

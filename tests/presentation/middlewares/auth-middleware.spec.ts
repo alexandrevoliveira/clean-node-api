@@ -49,7 +49,7 @@ describe('Auth Middleware', () => {
     const { sut, loadAccountByTokenSpy } = makeSut()
     const httpResponse = await sut.handle(mockRequest())
     expect(httpResponse).toEqual(ok({
-      accountId: loadAccountByTokenSpy.result.id
+      accountId: loadAccountByTokenSpy.result?.id
     }))
   })
 
@@ -58,5 +58,12 @@ describe('Auth Middleware', () => {
     jest.spyOn(loadAccountByTokenSpy, 'load').mockImplementationOnce(throwError)
     const httpResponse = await sut.handle(mockRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
+  })
+
+  test('Should return 500 if LoadAccountByToken throws undefined', async () => {
+    const { sut, loadAccountByTokenSpy } = makeSut()
+    jest.spyOn(loadAccountByTokenSpy, 'load').mockRejectedValueOnce(undefined)
+    const httpResponse = await sut.handle(mockRequest())
+    expect(httpResponse).toEqual(serverError(undefined))
   })
 })

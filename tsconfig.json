@@ -2,9 +2,9 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "CommonJS",
-    "target": "es2020",
+    "target": "ES2022",
     "esModuleInterop": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "sourceMap": true,
     "rootDirs": ["src", "tests"],
     "baseUrl": "src",
