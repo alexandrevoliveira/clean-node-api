@@ -1,0 +1,9 @@
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install curl -y
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs && npm i -g npm typescript
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+CMD ["npm", "run", "debug"]

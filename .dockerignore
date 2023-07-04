@@ -1,0 +1,6 @@
+.vscode
+coverage
+data
+dist
+!src/data
+!tests/data
