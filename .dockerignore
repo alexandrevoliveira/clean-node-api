@@ -1,9 +1,6 @@
-.env
 .vscode
-globalConfig.json
 coverage
 data
 dist
-node_modules
 !src/data
 !tests/data

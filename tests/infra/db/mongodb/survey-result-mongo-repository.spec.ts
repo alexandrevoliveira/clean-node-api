@@ -1,5 +1,6 @@
 import { SurveyModel } from '@/domain/models'
 import { SurveyResultMongoRepository, MongoHelper } from '@/infra/db'
+import env from '@/main/config/env'
 import { mockAddSurveyParams, mockAddAccountParams } from '@/tests/domain/mocks'
 
 import { Collection, ObjectId } from 'mongodb'
@@ -25,7 +26,7 @@ const mockAccountId = async (): Promise<string> => {
 
 describe('SurveyMongoRepository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {
@@ -105,14 +106,14 @@ describe('SurveyMongoRepository', () => {
       const sut = makeSut()
       const surveyResult = await sut.loadBySurveyId(survey.id, accountId)
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.surveyId).toEqual(survey.id)
-      expect(surveyResult.answers[0].count).toBe(2)
-      expect(surveyResult.answers[0].percent).toBe(100)
-      expect(surveyResult.answers[0].isCurrentAccountAnswer).toBe(true)
-      expect(surveyResult.answers[1].count).toBe(0)
-      expect(surveyResult.answers[1].percent).toBe(0)
-      expect(surveyResult.answers[1].isCurrentAccountAnswer).toBe(false)
-      expect(surveyResult.answers.length).toBe(survey.answers.length)
+      expect(surveyResult?.surveyId).toEqual(survey.id)
+      expect(surveyResult?.answers[0].count).toBe(2)
+      expect(surveyResult?.answers[0].percent).toBe(100)
+      expect(surveyResult?.answers[0].isCurrentAccountAnswer).toBe(true)
+      expect(surveyResult?.answers[1].count).toBe(0)
+      expect(surveyResult?.answers[1].percent).toBe(0)
+      expect(surveyResult?.answers[1].isCurrentAccountAnswer).toBe(false)
+      expect(surveyResult?.answers.length).toBe(survey.answers.length)
     })
 
     test('Should load survey result 2', async () => {
@@ -139,14 +140,14 @@ describe('SurveyMongoRepository', () => {
       const sut = makeSut()
       const surveyResult = await sut.loadBySurveyId(survey.id, accountId2)
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.surveyId).toEqual(survey.id)
-      expect(surveyResult.answers[0].count).toBe(2)
-      expect(surveyResult.answers[0].percent).toBe(67)
-      expect(surveyResult.answers[0].isCurrentAccountAnswer).toBe(true)
-      expect(surveyResult.answers[1].count).toBe(1)
-      expect(surveyResult.answers[1].percent).toBe(33)
-      expect(surveyResult.answers[1].isCurrentAccountAnswer).toBe(false)
-      expect(surveyResult.answers.length).toBe(survey.answers.length)
+      expect(surveyResult?.surveyId).toEqual(survey.id)
+      expect(surveyResult?.answers[0].count).toBe(2)
+      expect(surveyResult?.answers[0].percent).toBe(67)
+      expect(surveyResult?.answers[0].isCurrentAccountAnswer).toBe(true)
+      expect(surveyResult?.answers[1].count).toBe(1)
+      expect(surveyResult?.answers[1].percent).toBe(33)
+      expect(surveyResult?.answers[1].isCurrentAccountAnswer).toBe(false)
+      expect(surveyResult?.answers.length).toBe(survey.answers.length)
     })
 
     test('Should load survey result 3', async () => {
@@ -168,14 +169,14 @@ describe('SurveyMongoRepository', () => {
       const sut = makeSut()
       const surveyResult = await sut.loadBySurveyId(survey.id, accountId3)
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.surveyId).toEqual(survey.id)
-      expect(surveyResult.answers[0].count).toBe(1)
-      expect(surveyResult.answers[0].percent).toBe(50)
-      expect(surveyResult.answers[0].isCurrentAccountAnswer).toBe(false)
-      expect(surveyResult.answers[1].count).toBe(1)
-      expect(surveyResult.answers[1].percent).toBe(50)
-      expect(surveyResult.answers[1].isCurrentAccountAnswer).toBe(false)
-      expect(surveyResult.answers.length).toBe(survey.answers.length)
+      expect(surveyResult?.surveyId).toEqual(survey.id)
+      expect(surveyResult?.answers[0].count).toBe(1)
+      expect(surveyResult?.answers[0].percent).toBe(50)
+      expect(surveyResult?.answers[0].isCurrentAccountAnswer).toBe(false)
+      expect(surveyResult?.answers[1].count).toBe(1)
+      expect(surveyResult?.answers[1].percent).toBe(50)
+      expect(surveyResult?.answers[1].isCurrentAccountAnswer).toBe(false)
+      expect(surveyResult?.answers.length).toBe(survey.answers.length)
     })
 
     test('Should return null if there is no survey result', async () => {

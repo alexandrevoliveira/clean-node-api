@@ -1,5 +1,6 @@
 import { MongoHelper } from '@/infra/db'
 import { setupApp } from '@/main/config/app'
+import env from '@/main/config/env'
 
 import { hash } from 'bcrypt'
 import { Express } from 'express'
@@ -12,7 +13,7 @@ let accountCollection: Collection
 describe('Login GraphQL', () => {
   beforeAll(async () => {
     app = await setupApp()
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {

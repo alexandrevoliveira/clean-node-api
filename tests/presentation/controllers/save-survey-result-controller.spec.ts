@@ -7,7 +7,7 @@ import { SaveSurveyResultSpy, LoadAnswersBySurveySpy } from '@/tests/presentatio
 import MockDate from 'mockdate'
 import faker from 'faker'
 
-const mockRequest = (answer: string = null): SaveSurveyResultController.Request => ({
+const mockRequest = (answer: string = faker.random.words()): SaveSurveyResultController.Request => ({
   surveyId: faker.datatype.uuid(),
   answer,
   accountId: faker.datatype.uuid()

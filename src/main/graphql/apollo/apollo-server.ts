@@ -6,7 +6,7 @@ import { ApolloServer } from 'apollo-server-express'
 import { GraphQLError } from 'graphql'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 
-const handleErrors = (response: any, errors: readonly GraphQLError[]): void => {
+const handleErrors = (response: any, errors: readonly GraphQLError[] | undefined): void => {
   errors?.forEach(error => {
     response.data = undefined
     if (checkError(error, 'UserInputError')) {

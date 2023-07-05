@@ -1,4 +1,5 @@
 import { AccountMongoRepository, MongoHelper } from '@/infra/db'
+import env from '@/main/config/env'
 import { mockAddAccountParams } from '@/tests/domain/mocks'
 
 import { Collection } from 'mongodb'
@@ -12,7 +13,7 @@ let accountCollection: Collection
 
 describe('AccountMongoRepository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {
@@ -40,9 +41,9 @@ describe('AccountMongoRepository', () => {
       await accountCollection.insertOne(addAccountParams)
       const account = await sut.loadByEmail(addAccountParams.email)
       expect(account).toBeTruthy()
-      expect(account.id).toBeTruthy()
-      expect(account.name).toBe(addAccountParams.name)
-      expect(account.password).toBe(addAccountParams.password)
+      expect(account?.id).toBeTruthy()
+      expect(account?.name).toBe(addAccountParams.name)
+      expect(account?.password).toBe(addAccountParams.password)
     })
 
     test('Should return null if loadByEmail fails', async () => {
@@ -73,12 +74,12 @@ describe('AccountMongoRepository', () => {
       const sut = makeSut()
       const res = await accountCollection.insertOne(mockAddAccountParams())
       const fakeAccount = await accountCollection.findOne({ _id: res.insertedId })
-      expect(fakeAccount.accessToken).toBeFalsy()
+      expect(fakeAccount!.accessToken).toBeFalsy()
       const accessToken = faker.datatype.uuid()
-      await sut.updateAccessToken(fakeAccount._id.toHexString(), accessToken)
-      const account = await accountCollection.findOne({ _id: fakeAccount._id })
+      await sut.updateAccessToken(fakeAccount!._id.toHexString(), accessToken)
+      const account = await accountCollection.findOne({ _id: fakeAccount!._id })
       expect(account).toBeTruthy()
-      expect(account.accessToken).toBe(accessToken)
+      expect(account!.accessToken).toBe(accessToken)
     })
   })
 
@@ -105,7 +106,7 @@ describe('AccountMongoRepository', () => {
       })
       const account = await sut.loadByToken(accessToken)
       expect(account).toBeTruthy()
-      expect(account.id).toBeTruthy()
+      expect(account?.id).toBeTruthy()
     })
 
     test('Should return an account on loadByToken with admin role', async () => {
@@ -119,7 +120,7 @@ describe('AccountMongoRepository', () => {
       })
       const account = await sut.loadByToken(accessToken, 'admin')
       expect(account).toBeTruthy()
-      expect(account.id).toBeTruthy()
+      expect(account?.id).toBeTruthy()
     })
 
     test('Should return null on loadByToken with invalid role', async () => {
@@ -145,7 +146,7 @@ describe('AccountMongoRepository', () => {
       })
       const account = await sut.loadByToken(accessToken)
       expect(account).toBeTruthy()
-      expect(account.id).toBeTruthy()
+      expect(account?.id).toBeTruthy()
     })
 
     test('Should return null if loadByToken fails', async () => {

@@ -1,4 +1,5 @@
 import { SurveyMongoRepository, MongoHelper } from '@/infra/db'
+import env from '@/main/config/env'
 import { mockAddSurveyParams, mockAddAccountParams } from '@/tests/domain/mocks'
 
 import { Collection, ObjectId } from 'mongodb'
@@ -19,7 +20,7 @@ const makeSut = (): SurveyMongoRepository => {
 
 describe('SurveyMongoRepository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {
@@ -51,9 +52,9 @@ describe('SurveyMongoRepository', () => {
       const result = await surveyCollection.insertMany(addSurveyModels)
       const survey = await surveyCollection.findOne({ _id: result.insertedIds[0] })
       await surveyResultCollection.insertOne({
-        surveyId: survey._id,
+        surveyId: survey?._id,
         accountId: new ObjectId(accountId),
-        answer: survey.answers[0].answer,
+        answer: survey?.answers[0].answer,
         date: new Date()
       })
       const sut = makeSut()
@@ -95,8 +96,8 @@ describe('SurveyMongoRepository', () => {
       const res = await surveyCollection.insertOne(mockAddSurveyParams())
       const survey = await surveyCollection.findOne({ _id: res.insertedId })
       const sut = makeSut()
-      const answers = await sut.loadAnswers(survey._id.toHexString())
-      expect(answers).toEqual([survey.answers[0].answer, survey.answers[1].answer])
+      const answers = await sut.loadAnswers(survey!._id.toHexString())
+      expect(answers).toEqual([survey!.answers[0].answer, survey!.answers[1].answer])
     })
 
     test('Should return empty array if survey does not exists', async () => {

@@ -1,10 +1,10 @@
 import { Validation } from '@/presentation/protocols'
 
 export class ValidationSpy implements Validation {
-  error: Error = null
+  error: Error | undefined = undefined
   input: any
 
-  validate (input: any): Error {
+  validate (input: any): Error | undefined {
     this.input = input
     return this.error
   }
