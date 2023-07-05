@@ -1,0 +1,45 @@
+name: Clean Node API CI
+on:
+  push:
+    branches:
+      - main
+      - '*/*'
+  pull_request:
+    branches:
+      - main
+      - '*/*'
+
+env:
+  SHA: $(git rev-parse HEAD)
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run lint
+
+      - name: Run CI tests
+        run: |-
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          bash -c ./test-ci.sh
+
+      - name: Build Image
+        run: docker build -t alexandrevoliveira/clean-node-api:latest -t alexandrevoliveira/clean-node-api:${{ env.SHA }} .
+
+      - name: Push Image
+        run: |-
+          docker push alexandrevoliveira/clean-node-api:latest
+
+          docker push alexandrevoliveira/clean-node-api:${{ env.SHA }}
